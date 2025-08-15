@@ -1,0 +1,78 @@
+/*
+Estilos universais, a estrutura o bootstrap ja ta dando conta, entao vamo amadurecer essa mente
+*/
+* {
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,html {
+    width: 100% !important;
+    overflow-x: hidden;
+}
+.background {
+  position: fixed; /* ou fixed, se quiser acompanhar o scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+  background-image: url(../images/bg-1.png);
+}
+.fundo-verde {
+  background-color: #165c0d !important;
+}
+.bg-offwhite {
+  position: fixed; /* ou fixed, se quiser acompanhar o scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+  background-color: #faf9f6;
+}
+#passwordRequirements {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+#passwordRequirements.visible {
+  opacity: 1;
+  max-height: 500px; /* valor grande para liberar o espaço */
+}
+/* Botão Google */
+.btn-google {
+  background-color: white;
+  color: #555;
+  border: 1px solid #ccc;
+  font-weight: 500;
+}
+.btn-google:hover {
+  background-color: #f7f7f7;
+  border-color: #bbb;
+}
+
+/* Botão Facebook */
+.btn-facebook {
+  background-color: #1877f2;
+  color: white;
+  font-weight: 500;
+}
+.btn-facebook:hover {
+  background-color: #145dbf;
+}
+
+/* Botão GitHub */
+.btn-github {
+  background-color: #8913ce;
+  color: white;
+  font-weight: 500;
+}
+.btn-github:hover {
+  background-color: #48025e;
+  color: white;
+}
