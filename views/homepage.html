@@ -1,11 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard ODS - Green Pine</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body { background-color: #f6f8f5; }
+    .navbar { background-color: #2e7d32 !important; }
+    .navbar-brand, .nav-link { color: white !important; }
+    .section-title { border-bottom: 2px solid #ccc; padding-bottom: .5rem; margin-bottom: 1rem; }
+    footer { background: #2e7d32; color: white; padding: 1rem; text-align: center; margin-top: 2rem; }
+    #loadingSpinner {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background-color: rgba(255,255,255,0.9); z-index: 2000;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#"><i class="bi bi-flower3 me-2"></i>Green Pine</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light rounded-1"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ferramentas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Acessibilidade</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard -->
+  <div class="container py-4">
     
+    <!-- Status da Planta -->
+    <h4 class="section-title"><i class="bi bi-tree"></i> Status da Planta</h4>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <h6 class="card-title">Dias desde última rega</h6>
+            <p id="diasRega" class="display-6 fw-bold text-success">-</p>
+            <small id="proximaRega" class="text-muted">Cadastre uma planta</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <h6 class="card-title">Água no vaso</h6>
+            <div class="progress mt-3">
+              <div id="aguaBarra" class="progress-bar bg-success" style="width: 0%;">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <h6 class="card-title">Dias de vida</h6>
+            <p id="diasVida" class="display-6 fw-bold">-</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <h6 class="card-title">Previsão de frutos</h6>
+            <p id="frutos" class="fs-5">Nenhuma</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Extra -->
+    <h4 class="section-title mt-5"><i class="bi bi-lightbulb"></i> Informações Extras</h4>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-success">
+          <div class="card-body">
+            <h5 class="card-title">Dicas rápidas</h5>
+            <p>Mantenha a planta longe de ventos fortes e regue nas primeiras horas da manhã.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-success">
+          <div class="card-body">
+            <h5 class="card-title">Curiosidade</h5>
+            <p>Algumas plantas conseguem “sentir” vibrações sonoras e responder ao ambiente.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-success">
+          <div class="card-body">
+            <h5 class="card-title">Fertilizantes sugeridos</h5>
+            <ul class="mb-0">
+              <li><a href="#">Composto orgânico</a></li>
+              <li><a href="#">Adubo NPK 10-10-10</a></li>
+              <li><a href="#">Humus de minhoca</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Green Pine - Dashboard ODS
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Mantém seu JS atual aqui -->
+  <script src="dashboard.js"></script>
 </body>
 </html>
