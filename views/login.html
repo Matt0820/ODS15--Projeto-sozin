@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Green Pine</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f6f8f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      max-width: 400px;
+      width: 100%;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .brand {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #2e7d32;
+    }
+    .brand i {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="card">
+    <div class="brand"><i class="bi bi-flower3"></i>Green Pine</div>
+
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="usuario" class="form-label">Usuário</label>
+        <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário">
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+      </div>
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-success">Login</button>
+      </div>
+      <div class="text-center">
+        <a href="#" class="small">Esqueceu a senha?</a> | 
+        <a href="#" class="small">Criar conta</a>
+      </div>
+    </form>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Placeholder JS para login (não faz nada ainda)
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Login placeholder! Você pode integrar com o servidor depois.');
+    });
+  </script>
+</body>
+</html>
