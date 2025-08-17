@@ -1,50 +1,130 @@
-/*
-Estilos universais, a estrutura o bootstrap ja ta dando conta, entao vamo amadurecer essa mente
-*/
+/* ---------------------------------------------------
+   RESET & UNIVERSAL
+--------------------------------------------------- */
+
+/* Reset global básico */
 * {
-    margin: 0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body,html {
-    width: 100% !important;
-    overflow-x: hidden;
+
+/* Define comportamento padrão do body/html */
+body, html {
+  width: 100% !important; /* garante que ocupe toda a largura */
+  height: 100%;           /* altura total da tela */
+  overflow-x: hidden;     /* previne scroll horizontal */
+  font-family: "Segoe UI", sans-serif;
 }
+
+/* ---------------------------------------------------
+   BACKGROUNDS GERAIS
+--------------------------------------------------- */
+
+/* Imagem de fundo global (padrão) */
 .background {
-  position: fixed; /* ou fixed, se quiser acompanhar o scroll */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   display: flex;
-  z-index: -1;
+  z-index: -1; /* joga para trás dos elementos */
   background-image: url(../images/bg-1.png);
+  background-size: cover;
+  background-position: center;
 }
+
+/* Fundo sólido verde (pode ser usado em páginas específicas) */
 .fundo-verde {
   background-color: #165c0d !important;
 }
+
+/* Fundo sólido offwhite (pode ser usado em páginas específicas) */
 .bg-offwhite {
-  position: fixed; /* ou fixed, se quiser acompanhar o scroll */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   display: flex;
   z-index: -1;
   background-color: #aeec9f;
 }
+
+/* ---------------------------------------------------
+   LOGIN PAGE ESPECÍFICA
+--------------------------------------------------- */
+
+/* Container que centraliza o card no login */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ocupa a tela toda */
+}
+
+/* Card do login */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: #fff;
+  animation: fadeIn 0.7s ease;
+}
+
+/* Marca da tela de login (logo + nome) */
+.login-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #2e7d32;
+}
+
+/* Botão principal (sobrescreve o .btn-success do Bootstrap no contexto login) */
+.login-card .btn-success {
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+/* Links dentro do card de login */
+.login-card .text-center a {
+  color: #2e7d32;
+  text-decoration: none;
+}
+.login-card .text-center a:hover {
+  text-decoration: underline;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------
+   PASSWORD REQUIREMENTS (Cadastro)
+--------------------------------------------------- */
+
 #passwordRequirements {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
-
 #passwordRequirements.visible {
   opacity: 1;
-  max-height: 500px; /* valor grande para liberar o espaço */
+  max-height: 500px; /* libera espaço */
 }
-/* Botão Google */
+
+/* ---------------------------------------------------
+   BOTÕES SOCIAIS
+--------------------------------------------------- */
+
+/* Google */
 .btn-google {
   background-color: white;
   color: #555;
@@ -56,7 +136,7 @@ body,html {
   border-color: #bbb;
 }
 
-/* Botão Facebook */
+/* Facebook */
 .btn-facebook {
   background-color: #1877f2;
   color: white;
@@ -66,7 +146,7 @@ body,html {
   background-color: #145dbf;
 }
 
-/* Botão GitHub */
+/* GitHub */
 .btn-github {
   background-color: #8913ce;
   color: white;
