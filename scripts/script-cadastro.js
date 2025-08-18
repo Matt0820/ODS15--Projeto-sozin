@@ -10,7 +10,7 @@ const toggleSenha = document.getElementById('toggleSenha');
 const requerimentos = document.getElementById('passwordRequirements');
 
 // SVGs olho
-const eyeSVG = toggleSenha.innerHTML;
+const eyeSVG = toggleSenha?.innerHTML || '';
 const eyeSlashSVG = `
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
   <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
@@ -20,7 +20,7 @@ const eyeSlashSVG = `
 `;
 
 // Toggle olho da senha
-toggleSenha.addEventListener('click', () => {
+toggleSenha?.addEventListener('click', () => {
   if (inputSenha.type === 'password') {
     inputSenha.type = 'text';
     toggleSenha.innerHTML = eyeSlashSVG;
@@ -41,7 +41,7 @@ inputSenha.addEventListener('input', () => {
     { regex: /.{8,}/, id: 'req-length' },
     { regex: /[A-Z]/, id: 'req-uppercase' },
     { regex: /[0-9]/, id: 'req-number' },
-    { regex: /[!@#$%¨&*(),.:{}]/, id: 'req-symbol' },
+    { regex: /[!@#$%^&*(),.:{}]/, id: 'req-symbol' },
   ];
 
   requisitos.forEach(r => {
@@ -73,7 +73,7 @@ botaoCadastro.addEventListener('click', async () => {
   const tem8caracteres = senha.length >= 8;
   const temMaiuscula = /[A-Z]/.test(senha);
   const temNumero = /[0-9]/.test(senha);
-  const temSimbolo = /[!@#$%¨&*(),.:{}]/.test(senha);
+  const temSimbolo = /[!@#$%^&*(),.:{}]/.test(senha);
 
   if (!(tem8caracteres && temMaiuscula && temNumero && temSimbolo)) {
     showToast('Sua senha não atende a todos os requisitos.');
@@ -92,18 +92,19 @@ botaoCadastro.addEventListener('click', async () => {
       showToast(data.mensagem);
       window.location.href = '/home.html';
     } else {
-      showToast(data.erro);
+      showToast(data.erro, 'danger');
     }
   } catch (err) {
     console.error(err);
-    showToast('Erro ao cadastrar. Tente novamente.');
+    showToast('Erro ao cadastrar. Tente novamente.', 'danger');
   }
 });
-function showToast(mensagem,tipo = 'success') {
+
+function showToast(mensagem, tipo = 'success') {
   const toast = document.getElementById('toastContainer');
 
   const toastEl = document.createElement('div');
-  toastEl.className = 'toast align-items-center text-bg-${tipo} border-0';
+  toastEl.className = `toast align-items-center text-bg-${tipo} border-0`;
   toastEl.setAttribute('role', 'alert');
   toastEl.setAttribute('aria-live', 'assertive');
   toastEl.setAttribute('aria-atomic', 'true');
@@ -114,18 +115,18 @@ function showToast(mensagem,tipo = 'success') {
         ${mensagem}
       </div>
        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-       </div>
-       `;
+    </div>
+  `;
 
   toast.appendChild(toastEl);
 
   const toastInstance = new bootstrap.Toast(toastEl);
   toastInstance.show();
 
-  toastEl.addEventListener('click', () => toastInstance.remove());
-
+  // Remove do DOM quando sumir
+  toastEl.addEventListener('hidden.bs.toast', () => toastEl.remove());
 } 
-window.addEventListener('load', () => {
-  document.getElementById('spinnerPage').style.display = 'none';
-  document.getElementById('conteudoPage').classList.remove('d-none');
-});
+botaoLogin = document.getElementById('botao-login');
+botaoLogin.addEventListener('click',function(){
+  window.location.href = "login.html";
+})

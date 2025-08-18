@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    const email = document.getElementById("usuario").value;
-    const senha = document.getElementById("senha").value;
+    const email = document.getElementById("usuario").value.trim();
+    const senha = document.getElementById("senha").value.trim();
 
     try {
-      // busca os usuarios.json
-      const res = await fetch("/dados/usuarios.json");
+      // busca os usuários do backend
+      const res = await fetch("/usuarios");
       const usuarios = await res.json();
 
       const user = usuarios.find(u => u.email === email && u.senha === senha);
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (user) {
         msg.innerHTML = `<div class="alert alert-success">✅ Login realizado com sucesso!</div>`;
         setTimeout(() => {
-          window.location.href = "homepage.html"; // redireciona
+          window.location.href = "/home.html"; // rota certa do servidor
         }, 1500);
       } else {
         msg.innerHTML = `<div class="alert alert-danger">❌ Usuário ou senha inválidos</div>`;

@@ -7,79 +7,112 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    body { background-color: #f6f8f5; }
-    .navbar { background-color: #2e7d32 !important; }
-    .navbar-brand, .nav-link { color: white !important; }
-    .section-title { border-bottom: 2px solid #ccc; padding-bottom: .5rem; margin-bottom: 1rem; }
-    footer { background: #2e7d32; color: white; padding: 1rem; text-align: center; margin-top: 2rem; }
+    .section {
+      padding: 3rem 1rem;
+    }
+    .icon-box {
+      background: #f8f9fa;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .icon-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .icon-box i {
+      font-size: 2.5rem;
+      color: #198754;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
-<body>
+<body class="login-page">
+  <div class="background"></div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#"><i class="bi bi-flower3 me-2"></i>Green Pine</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon bg-light rounded-1"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
-        </ul>
-      </div>
+  <!-- Cabeçalho -->
+  <header class="text-center text-white bg-success py-5">
+    <h1 class="fw-bold">🌱 Green Pine</h1>
+    <p class="lead">Conectando pessoas ao verde, cuidando do planeta.</p>
+  </header>
+
+  <!-- Sobre o projeto -->
+  <section class="section container">
+    <div class="text-center mb-4">
+      <h2 class="text-success fw-bold"><i class="bi bi-info-circle"></i> O Projeto</h2>
+      <p class="text-muted">Saiba mais sobre a iniciativa que une tecnologia, colaboração e sustentabilidade.</p>
     </div>
-  </nav>
+    <p class="fs-5">
+      O <strong>Green Pine</strong> é uma plataforma social desenvolvida como protótipo acadêmico, com o objetivo de incentivar e melhorar a prática da <strong>plantação</strong> e o cuidado com o <em>verde</em>.  
+    </p>
+    <p class="fs-5">
+      O projeto está alinhado à <strong>ODS 15 – Vida Terrestre</strong>, buscando criar um espaço onde usuários possam compartilhar experiências, trocar conhecimentos e engajar em práticas sustentáveis.
+    </p>
+  </section>
 
-  <!-- Conteúdo principal -->
-  <div class="container py-4">
-
-    <h4 class="section-title"><i class="bi bi-info-circle"></i> Sobre o Green Pine</h4>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Nossa Missão</h5>
-            <p>Promover o cuidado e a preservação das plantas de forma simples e interativa, ajudando os usuários a monitorar suas plantas e aprender sobre elas.</p>
+  <!-- Missão, Visão, Valores -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="icon-box">
+            <i class="bi bi-bullseye"></i>
+            <h5 class="fw-bold">Missão</h5>
+            <p>Promover a conscientização ambiental e incentivar práticas de cultivo acessíveis a todos.</p>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Visão</h5>
-            <p>Ser a ferramenta de referência para o acompanhamento e aprendizado sobre plantas, unindo tecnologia e sustentabilidade.</p>
+        <div class="col-md-4">
+          <div class="icon-box">
+            <i class="bi bi-eye"></i>
+            <h5 class="fw-bold">Visão</h5>
+            <p>Ser referência em tecnologia educacional voltada para sustentabilidade e preservação ambiental.</p>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="row g-4 mt-3">
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Nossa Equipe</h5>
-            <p>Formada por entusiastas de tecnologia e natureza, dedicados a criar soluções práticas para o cuidado com plantas.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Contato</h5>
-            <p>Email: contato@greenpine.com<br>Telefone: +55 11 99999-9999</p>
+        <div class="col-md-4">
+          <div class="icon-box">
+            <i class="bi bi-heart"></i>
+            <h5 class="fw-bold">Valores</h5>
+            <p>Colaboração, aprendizado, inovação e responsabilidade socioambiental.</p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
+  <!-- Equipe -->
+  <section class="section container">
+    <div class="text-center mb-4">
+      <h2 class="text-success fw-bold"><i class="bi bi-people-fill"></i> Nossa Equipe</h2>
+      <p class="text-muted">Um projeto de estudantes, feito com dedicação e criatividade.</p>
+    </div>
+    <p class="fs-5">
+      O Green Pine foi inicialmente idealizado e planejado por um grupo de <strong>6 estudantes</strong>.  
+      Atualmente, o desenvolvimento ativo está sendo mantido por um integrante, com apoio de contribuições artísticas e sugestões de colegas.
+    </p>
+    <p class="fs-5">
+      As imagens foram geradas com auxílio de <strong>Inteligência Artificial</strong>, mas também há produção própria em ilustrações.  
+      O foco é entregar uma experiência visual envolvente, sem fins lucrativos.
+    </p>
+  </section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Green Pine - Dashboard ODS
+  <!-- Segurança e Transparência -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="text-success fw-bold"><i class="bi bi-shield-check"></i> Segurança e Transparência</h2>
+      </div>
+      <p class="fs-5">
+        Este projeto é apenas um protótipo acadêmico.  
+        Nenhum dado pessoal sensível é utilizado: os usuários são armazenados em <strong>JSON simples</strong>, sem criptografia, reforçando que não há finalidade comercial.  
+        O intuito é <strong>educacional</strong>, demonstrando boas práticas de programação e design.
+      </p>
+    </div>
+  </section>
+
+  <!-- Encerramento -->
+  <footer class="text-center text-white bg-success py-4">
+    <p class="mb-0">🌿 Green Pine - Um projeto feito por estudantes, para inspirar práticas sustentáveis.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
