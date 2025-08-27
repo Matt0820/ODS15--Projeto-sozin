@@ -14,7 +14,7 @@ app.use(session({
   secret: "chave-secreta-mvp",
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false } // agora seguro porque HTTPS
+  cookie: { secure: true } // agora seguro porque HTTPS
 }));
 
 // Arquivos estáticos
