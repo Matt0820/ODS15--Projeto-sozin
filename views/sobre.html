@@ -6,6 +6,8 @@
   <title>Sobre - Green Pine</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/estilo1.css">
+  <link rel="icon" href="../images/Gemini_Generated_Image_utjr1xutjr1xutjr-removebg-preview.png">
   <style>
     .section {
       padding: 3rem 1rem;
@@ -28,11 +30,9 @@
     }
   </style>
 </head>
-<body class="login-page">
-  <div class="background"></div>
-
+<body>
   <!-- Cabeçalho -->
-  <header class="text-center text-white bg-success py-5">
+  <header class="text-center text-white fundo-verde py-5">
     <h1 class="fw-bold">🌱 Green Pine</h1>
     <p class="lead">Conectando pessoas ao verde, cuidando do planeta.</p>
   </header>
@@ -111,10 +111,19 @@
   </section>
 
   <!-- Encerramento -->
-  <footer class="text-center text-white bg-success py-4">
+  <footer class="text-center text-white fundo-verde py-4">
     <p class="mb-0">🌿 Green Pine - Um projeto feito por estudantes, para inspirar práticas sustentáveis.</p>
+    <br>
+    <button id="botaoCadastro" class="btn botao-padrao">Cadastre-se</button>
+    <button onclick="history.back()" class="btn botao-padrao">Voltar</button>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const botaoCadastro = document.getElementById('botaoCadastro');
+    botaoCadastro.addEventListener('click', () => {
+      window.location.href = 'cadastro.html';
+    });
+  </script>
 </body>
 </html>

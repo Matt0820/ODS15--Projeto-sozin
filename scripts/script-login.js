@@ -9,24 +9,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const senha = document.getElementById("senha").value.trim();
 
     try {
-      // busca os usuários do backend
-      const res = await fetch("/usuarios");
-      const usuarios = await res.json();
+      const res = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, senha })
+      });
 
-      const user = usuarios.find(u => u.email === email && u.senha === senha);
+      const resultado = await res.json();
 
-      if (user) {
-        msg.innerHTML = `<div class="alert alert-success">✅ Login realizado com sucesso!</div>`;
+      if (res.ok) { // res.ok verifica se o status da resposta está entre 200-299
+        msg.innerHTML = `<div class="alert alert-success">✅ ${resultado.mensagem}</div>`;
         setTimeout(() => {
-          window.location.href = "/home.html"; // rota certa do servidor
+          window.location.href = "/home.html"; // Redireciona para a página protegida
         }, 1500);
       } else {
-        msg.innerHTML = `<div class="alert alert-danger">❌ Usuário ou senha inválidos</div>`;
+        msg.innerHTML = `<div class="alert alert-danger">❌ ${resultado.erro}</div>`;
       }
-
     } catch (err) {
       console.error(err);
-      msg.innerHTML = `<div class="alert alert-warning">⚠️ Erro ao carregar usuários</div>`;
+      msg.innerHTML = `<div class="alert alert-warning">⚠️ Erro ao tentar fazer login.</div>`;
     }
   });
 });

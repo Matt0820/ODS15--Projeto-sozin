@@ -156,3 +156,12 @@ body, html {
   background-color: #48025e;
   color: white;
 }
+
+.botao-padrao {
+  background-color:#2e7d32 !important;
+  color: #fff;
+}
+.botao-padrao:hover {
+  background-color: #033005 !important;
+  color: #fff;
+}
